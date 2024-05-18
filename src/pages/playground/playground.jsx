@@ -32,9 +32,9 @@ function Playground() {
         <br />
         
         <div className="bg-white shadow-lg rounded ashraf">
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full ">
             <ResizablePanelGroup direction="horizontal" className="flex flex-grow">
-              <ResizablePanel className="border-r flex-grow">
+              <ResizablePanel className="border-r flex-grow min-w-72">
                 <div className="flex flex-col h-full items-center justify-center p-6">
                   <span className="font-semibold text-xl">Seed for Adventure</span>
                   <Textarea
@@ -58,7 +58,7 @@ function Playground() {
 
               <ResizableHandle />
 
-              <ResizablePanel className="flex-grow">
+              <ResizablePanel className="flex-grow min-w-72">
                 <ResizablePanelGroup direction="vertical" className="flex flex-grow">
                   <ResizablePanel className="flex-grow">
                     <div className="flex flex-col h-full items-center justify-center p-6">
@@ -73,7 +73,7 @@ function Playground() {
                         ):(
                           <>
                             <Textarea
-                              className="mt-4 resize-none w-full flex-grow text-base bg-gray-100"
+                              className="mt-4 resize-none w-full flex-grow text-base bg-gray-100 "
                               value={storyGenerated}
                               readOnly
                             />
