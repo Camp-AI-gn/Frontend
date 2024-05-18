@@ -31,7 +31,10 @@ function Playground() {
     <>
       <div>
         <div className="title1 font-bold text-3xl what2">
-          Game Story Generator
+          Bienvenue dans le Créateur de Quêtes :
+        </div>
+        <div className="qts font-bold text-2xl what">
+          Entrez votre graine d'aventure, générez votre histoire et partez à l'aventure ! 🏰⚔️
         </div>
         <br />
         
@@ -40,20 +43,20 @@ function Playground() {
             <ResizablePanelGroup direction="horizontal" className="flex flex-grow">
               <ResizablePanel className="border-r flex-grow min-w-72">
                 <div className="flex flex-col h-full items-center justify-center p-6">
-                  <span className="font-semibold text-xl">Seed for Adventure</span>
+                  <span className="font-semibold text-xl">Graine d'Aventure</span>
                   <Textarea
                     spellCheck="false"
                     className="mt-4 resize-none w-full flex-grow font-semibold bg-gray-100 text-base"
-                    placeholder="Enter your story seed here"
+                    placeholder="Entrez votre graine d'histoire ici"
                     value={storySeed}
                     onChange={(e) => setStorySeed(e.target.value)}
                   />
                   <br />
-                  <Button onClick={generateGameStory}>Generate Story</Button>
+                  <Button onClick={generateGameStory}>Générer l'Histoire</Button>
                   {error && (
                     <Alert variant="destructive" className="mt-2">
                       <AlertCircle className="h-4 w-4" />
-                      <AlertTitle>Error</AlertTitle>
+                      <AlertTitle>Erreur</AlertTitle>
                       <AlertDescription>{error}</AlertDescription>
                     </Alert>
                   )}
@@ -67,17 +70,17 @@ function Playground() {
                   <ResizablePanel className="flex-grow relative">
                     {/* Positionne "Generated Adventure" en haut */}
                     <div className="absolute top-0 left-0 right-0 p-6">
-                      <span className="font-semibold text-xl">Generated Adventure</span>
+                      <span className="font-semibold text-xl">Aventure Générée</span>
                     </div>
                     <div className="flex flex-col justify-between p-6 mt-12 h-full">
                       {loading ? (
                         <div className="flex items-center justify-center flex-grow">
-                          <img src="public/LOADING5.gif" alt="Loading..." className="w-48 h-48" />
+                          <img src="public/LOADING.gif" alt="Loading..." className="w-48 h-48" />
                         </div>
                       ) : (
                         <>
                           <Textarea
-                            className="resize-none w-full text-base bg-gray-100 "
+                            className="resize-none w-full text-base bg-gray-100 mt-2"
                             value={storyGenerated}
                             readOnly
                             style={{ height: '425px' }} // Hauteur fixe
@@ -87,7 +90,7 @@ function Playground() {
                               <CopyToClipboard text={storyGenerated}>
                                 <Button className="w-full py-1 px-4 rounded-lg" variant="outline">
                                   <FontAwesomeIcon icon={faCopy} className="mr-2" />
-                                  Copy Story
+                                  Copier l'Histoire
                                 </Button>
                               </CopyToClipboard>
                             </div>
