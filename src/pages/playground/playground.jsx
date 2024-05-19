@@ -8,6 +8,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Slider } from "@/components/ui/slider" // Adjust the import path based on your project structure
+
 import './playgroud.css';
 import { AlertCircle } from "lucide-react"
 // import { Link } from 'react-router-dom';
@@ -18,10 +20,15 @@ function Playground() {
   const [storyGenerated, setStoryGenerated] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [value, setValue] = useState([30])
 
   const generateGameStory = () => {
     //  LLM lol 🙂🙂
   };
+
+  const handleValueChange = (newValue) => {
+    setValue(newValue)
+  }
 
   return (
     <>
@@ -94,7 +101,22 @@ function Playground() {
                                
                           </>
                         )}
+                                        <div className="mb-3 mt-4">
+                              <label htmlFor="slider" className="block mb-2">
+                               Token: {value[0]}
+                              </label>
+                              <Slider
+                                id="slider"
+                                min={30}
+                                max={100}
+                                defaultValue={[30]}
+                                value={value}
+                                onValueChange={handleValueChange}
+                                step={1}
+                              />
+                            </div>
                     </div>
+            
                   </ResizablePanel>
                 </ResizablePanelGroup>
               </ResizablePanel>

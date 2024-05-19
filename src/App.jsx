@@ -1,27 +1,18 @@
-// import { useState } from 'react'
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Playground from './pages/playground/playground'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Playground from './pages/playground/playground';
+import Home from './pages/Home'; // Assuming you have a Home component
+import './App.css';
+
 function App() {
-  const Layout = () => {
-    return (
-      
-          <Outlet />
-        
-  ) ;
-  };
-
-  const router = createBrowserRouter([
-    {
-
-      path: "/",
-      element: <Playground />,
-      
-    },
-    
-  ]);
-
-  return <RouterProvider router={router} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/playground" element={<Playground />} />
+        {/* Add more routes as needed */}
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
