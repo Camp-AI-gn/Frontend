@@ -32,7 +32,7 @@ function Playground() {
 
   return (
     <>
-      <div>
+      <div id="playground">
         <div className="title1 font-bold text-3xl what2">
           Game Story Generator
         </div>

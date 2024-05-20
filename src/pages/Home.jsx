@@ -3,17 +3,16 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Navbar from '@/components/ui/navbar'; // Adjust the import path based on your project structure
+import Component from '@/components/ui/hero/section1'; // Import the Navbar component
 
 const Home = () => {
   return (
     <div>
 
-      <Navbar />
 
       <div>
-        <div style={{ height: '200vh' }}>
-          <h2>Div 1</h2>
-          <p>This is the content of div 1.</p>
+      <div style={{ height: '200vh', width: '100%', zIndex:1000 }}>
+          <Component />
         </div>
         <div style={{ height: '200vh' }}>
           <h2>Div 2</h2>
