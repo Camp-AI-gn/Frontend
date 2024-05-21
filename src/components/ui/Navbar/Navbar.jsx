@@ -14,7 +14,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
         <Link className="flex items-center gap-2 text-white" href="#">
           <GamepadIcon className="h-6 w-6" />
-          <span className="text-lg font-semibold">GameGenrator</span>
+          <span className="text-lg font-semibold">GG3</span>
         </Link>
         <nav className="hidden space-x-4 md:flex">
           <Link
@@ -54,7 +54,7 @@ export default function Navbar() {
               <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="#">
                 Home
               </Link>
-              <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="#">
+              <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="/playground">
                 Games
               </Link>
               <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="#">
