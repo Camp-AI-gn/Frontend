@@ -1,0 +1,5 @@
+/* Navbar.css */
+.navbar {
+  width: 100%;
+  z-index: 1030; /* Ensure the navbar is above other content */
+}

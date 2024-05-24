@@ -8,6 +8,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Slider } from "@/components/ui/slider" // Adjust the import path based on your project structure
+
 import './playgroud.css';
 import { AlertCircle } from "lucide-react";
 // import { Link } from 'react-router-dom';
@@ -18,6 +20,7 @@ function Playground() {
   const [storyGenerated, setStoryGenerated] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [value, setValue] = useState([30])
 
   const generateGameStory = () => {
     setLoading(true);
@@ -27,9 +30,13 @@ function Playground() {
     }, 3000);
   };
 
+  const handleValueChange = (newValue) => {
+    setValue(newValue)
+  }
+
   return (
     <>
-      <div>
+      <div id="playground">
         <div className="title1 font-bold text-3xl what2">
           Bienvenue dans le Créateur de Quêtes :
         </div>
@@ -67,37 +74,56 @@ function Playground() {
 
               <ResizablePanel className="flex-grow min-w-72">
                 <ResizablePanelGroup direction="vertical" className="flex flex-grow">
-                  <ResizablePanel className="flex-grow relative">
-                    {/* Positionne "Generated Adventure" en haut */}
-                    <div className="absolute top-0 left-0 right-0 p-6">
-                      <span className="font-semibold text-xl">Aventure Générée</span>
-                    </div>
-                    <div className="flex flex-col justify-between p-6 mt-12 h-full">
-                      {loading ? (
-                        <div className="flex items-center justify-center flex-grow">
-                          <img src="public/LOADING.gif" alt="Loading..." className="w-48 h-48" />
-                        </div>
-                      ) : (
-                        <>
-                          <Textarea
-                            className="resize-none w-full text-base bg-gray-100 mt-2"
-                            value={storyGenerated}
-                            readOnly
-                            style={{ height: '425px' }} // Hauteur fixe
-                          />
-                          {storyGenerated && (
-                            <div className="mt-4">
-                              <CopyToClipboard text={storyGenerated}>
-                                <Button className="w-full py-1 px-4 rounded-lg" variant="outline">
-                                  <FontAwesomeIcon icon={faCopy} className="mr-2" />
-                                  Copier l'Histoire
-                                </Button>
-                              </CopyToClipboard>
+                  <ResizablePanel className="flex-grow">
+                    <div className="flex flex-col h-full items-center justify-center p-6">
+                      <span className="font-semibold text-xl">Generated Adventure</span>
+                      {loading ? 
+                        ( <>
+                            <br />
+                            <div className="loader w-12 h-12 rounded-full border-2 border-gray-300 border-t-gray-800 animate-spin">
+                              {/* Affichez une animation ou une icône de chargement ici */}
                             </div>
-                          )}
-                        </>
-                      )}
+                          </>
+                        ):(
+                          <>
+                            <Textarea
+                              className="mt-4 resize-none w-full flex-grow text-base bg-gray-100"
+                              value={storyGenerated}
+                              readOnly
+                            />
+                           
+                           {storyGenerated && (
+                              <div className="flex justify-between">
+                                <div className="flex-grow p-2">
+                                  <CopyToClipboard text={storyGenerated}>
+                                    <Button className="w-full mt-2 py-1 px-4 rounded-lg" variant="outline" >
+                                      <FontAwesomeIcon icon={faCopy} className="mr-2" />
+                                      Copy Story
+                                    </Button>
+                                  </CopyToClipboard>
+                                </div>
+                                
+                              </div>
+                            )}
+                               
+                          </>
+                        )}
+                                        <div className="mb-3 mt-4">
+                              <label htmlFor="slider" className="block mb-2">
+                               Token: {value[0]}
+                              </label>
+                              <Slider
+                                id="slider"
+                                min={30}
+                                max={100}
+                                defaultValue={[30]}
+                                value={value}
+                                onValueChange={handleValueChange}
+                                step={1}
+                              />
+                            </div>
                     </div>
+            
                   </ResizablePanel>
                 </ResizablePanelGroup>
               </ResizablePanel>
