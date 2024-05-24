@@ -53,7 +53,7 @@ function Playground() {
                   <span className="font-semibold text-xl">Graine d'Aventure</span>
                   <Textarea
                     spellCheck="false"
-                    className="mt-4 resize-none w-full flex-grow font-semibold bg-gray-100 text-base"
+                    className="mt-4 resize-none w-full flex-grow font-semibold bg-gray-100 text-base mb-[10rem]"
                     placeholder="Entrez votre graine d'histoire ici"
                     value={storySeed}
                     onChange={(e) => setStorySeed(e.target.value)}
