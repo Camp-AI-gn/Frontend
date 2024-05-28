@@ -19,7 +19,7 @@ function Playground() {
   const generateGameStory = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/generate', {
+      const response = await fetch('localhost:8000/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
