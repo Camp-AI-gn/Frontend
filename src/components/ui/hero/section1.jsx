@@ -22,7 +22,7 @@ export default function Component() {
       
               <Button
                 className="rounded-md bg-gray-500 px-6 font-medium text-gray-900 hover:bg-gray-400 focus:ring-2 focus:ring-gray-500"
-                type="submit"
+                type="submit" to="/Playground"
               >
                 Get Started
               </Button>

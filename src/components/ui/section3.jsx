@@ -32,7 +32,7 @@ export default function section3() {
               </Link>
               <Link
                 className="inline-flex h-10 items-center justify-center rounded-md border border-gray-600 bg-gray-950 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-800 hover:text-gray-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-300 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-600 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-600"
-                href="https://github.com/langchain-ai/langchain">
+                to="https://github.com/langchain-ai/langchain">
                 View on GitHub
               </Link>
             </div>
