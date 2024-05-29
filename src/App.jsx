@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <div style={{ paddingTop: '60px' }}> {/* Adjust this value based on the height of your navbar */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/playground" element={<Playground />} />
           {/* Add more routes as needed */}
         </Routes>

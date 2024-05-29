@@ -1,8 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/RXClsVmIcH6
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button"
@@ -14,7 +10,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
         <Link
           className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-          href="#"
+          to="/Home"
         >
           Home
         </Link>
@@ -24,7 +20,7 @@ export default function Navbar() {
         </Link>
         <Link
           className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-          href="/playground"
+          to="/playground"
         >
           Games
         </Link>
@@ -37,14 +33,7 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent className="bg-gray-950 text-white" side="left">
             <div className="grid gap-4 p-6">
-              <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="#">
-                Home
-              </Link>
-              <Link href="/playground">
-                <a className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800">
-                  Games
-                </a>
-              </Link>
+    
  
  
             </div>

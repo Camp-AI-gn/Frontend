@@ -55,7 +55,7 @@ export default function footer() {
             alt="Collaborator 3"
             className="rounded-full"
             height={32}
-            src="/placeholder.svg"
+            src="/bil al.jpg"
             style={{
               aspectRatio: "32/32",
               objectFit: "cover",
@@ -71,7 +71,7 @@ export default function footer() {
         <Link aria-label="LinkedIn" href="#">
           <LinkedinIcon className="h-6 w-6" />
         </Link>
-        <Link aria-label="GitHub" href="#">
+        <Link aria-label="GitHub" to="https://github.com/orgs/Camp-AI-gn/people">
           <GithubIcon className="h-6 w-6" />
         </Link>
       </div>
