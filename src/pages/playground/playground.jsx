@@ -8,7 +8,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Slider } from "@/components/ui/slider" // Adjust the import path based on your project structure
+// Adjust the import path based on your project structure
 
 import './playgroud.css';
 import { AlertCircle } from "lucide-react";
@@ -19,12 +19,11 @@ function Playground() {
   const [storyGenerated, setStoryGenerated] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [value, setValue] = useState([30])
 
   const generateGameStory = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/generate', {
+      const response = await fetch('/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,11 +41,6 @@ function Playground() {
       setLoading(false);
     }
   };
-
-  const handleValueChange = (newValue) => {
-    setValue(newValue)
-  }
-
   return (
     <>
       <div id="playground">

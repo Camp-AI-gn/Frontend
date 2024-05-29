@@ -3,10 +3,15 @@
  * @see https://v0.dev/t/JnHejEaaWRp
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { useNavigate } from "react-router-dom"
 
 export default function Component() {
+  const navigate = useNavigate()
+
+  function handleClick() {
+    navigate("/playground")
+  }
   return (
     <section className="w-full py-20 md:py-32 lg:py-40 bg-gray-900 text-white">
       <div className="container px-4 md:px-6 lg:max-w-5xl">
@@ -23,6 +28,10 @@ export default function Component() {
               <Button
                 className="rounded-md bg-gray-500 px-6 font-medium text-gray-900 hover:bg-gray-400 focus:ring-2 focus:ring-gray-500"
                 type="submit"
+                onClick={() => {
+                  handleClick()
+                }
+                }
               >
                 Get Started
               </Button>
