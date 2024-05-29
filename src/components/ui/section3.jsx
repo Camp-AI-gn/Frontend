@@ -65,7 +65,7 @@ export default function section3() {
             alt="LangChain"
             className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
             height="310"
-            src="/placeholder.svg"
+            src="/src/assets/LangChaine.jpg"
             width="550" />
         </div>
       </div>
