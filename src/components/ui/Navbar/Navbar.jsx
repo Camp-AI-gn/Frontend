@@ -12,36 +12,22 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 z-50 w-full bg-gray-950 py-4 shadow-lg dark:bg-gray-950">
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
-        <Link className="flex items-center gap-2 text-white" href="#">
+        <Link
+          className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+          href="#"
+        >
+          Home
+        </Link>
+        <Link className="flex items-center gap-2 text-white mx-auto" href="#">
           <GamepadIcon className="h-6 w-6" />
           <span className="text-lg font-semibold">GG3</span>
         </Link>
-        <nav className="hidden space-x-4 md:flex">
-          <Link
-            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-            href="#"
-          >
-            Home
-          </Link>
-          <Link
-            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-            href="#"
-          >
-            Games
-          </Link>
-          <Link
-            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-            href="#"
-          >
-            About
-          </Link>
-          <Link
-            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
-            href="#"
-          >
-            Contact
-          </Link>
-        </nav>
+        <Link
+          className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white"
+          href="/playground"
+        >
+          Games
+        </Link>
         <Sheet>
           <SheetTrigger asChild>
             <Button className="md:hidden" size="icon" variant="outline">
@@ -54,21 +40,19 @@ export default function Navbar() {
               <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="#">
                 Home
               </Link>
-              <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="/playground">
-                Games
+              <Link href="/playground">
+                <a className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800">
+                  Games
+                </a>
               </Link>
-              <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="#">
-                About
-              </Link>
-              <Link className="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-800" href="#">
-                Contact
-              </Link>
+ 
+ 
             </div>
           </SheetContent>
         </Sheet>
       </div>
     </header>
-  )
+  );
 }
 
 function GamepadIcon(props) {
@@ -97,6 +81,9 @@ function GamepadIcon(props) {
 
 function MenuIcon(props) {
   return (
+
+
+    
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
