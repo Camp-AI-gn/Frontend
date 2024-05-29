@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Playground from './pages/playground/playground';
 import Home from './pages/Home';
 import Navbar from './components/ui/Navbar/Navbar'; // Assuming you have a Navbar component
+import Footer from './components/ui/footer'; // Assuming you have a Navbar component
+
 import './App.css';
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
           {/* Add more routes as needed */}
         </Routes>
       </div>
+    <Footer /> 
     </BrowserRouter>
   );
 }
