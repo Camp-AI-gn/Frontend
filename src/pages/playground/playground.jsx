@@ -1,20 +1,25 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { Textarea } from '@/components/ui/textarea';
+// import { RocketIcon } from "@radix-ui/react-icons";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Slider } from "@/components/ui/slider" // Adjust the import path based on your project structure
+
 import './playgroud.css';
 import { AlertCircle } from "lucide-react";
 
 function Playground() {
-
+  
   const [storySeed, setStorySeed] = useState('');
   const [storyGenerated, setStoryGenerated] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [value, setValue] = useState([30])
 
   const generateGameStory = async () => {
     setLoading(true);
@@ -38,41 +43,42 @@ function Playground() {
     }
   };
 
-  return (
-      <>
-        <div>
-          <div className="title1 font-bold text-3xl what2">
-            Bienvenue dans le Créateur de Quêtes :
-          </div>
-          <div className="qts font-bold text-2xl what">
-            Entrez votre graine d'aventure, générez votre histoire et partez à l'aventure ! 🏰⚔️
-          </div>
-          <br />
+  const handleValueChange = (newValue) => {
+    setValue(newValue)
+  }
 
-          <div className="bg-white shadow-lg rounded ashraf">
-            <div className="flex flex-col h-full">
-              <ResizablePanelGroup direction="horizontal" className="flex flex-grow">
-                <ResizablePanel className="border-r flex-grow min-w-72">
-                  <div className="flex flex-col h-full items-center justify-center p-6">
-                    <span className="font-semibold text-xl">Graine d'Aventure</span>
-                    <Textarea
-                        spellCheck="false"
-                        className="mt-4 resize-none w-full flex-grow font-semibold bg-gray-100 text-base mb-[10rem]"
-                        placeholder="Entrez votre graine d'histoire ici"
-                        value={storySeed}
-                        onChange={(e) => setStorySeed(e.target.value)}
-                    />
-                    <br />
-                    <Button onClick={generateGameStory}>Générer l'Histoire</Button>
-                    {error && (
-                        <Alert variant="destructive" className="mt-2">
-                          <AlertCircle className="h-4 w-4" />
-                          <AlertTitle>Erreur</AlertTitle>
-                          <AlertDescription>{error}</AlertDescription>
-                        </Alert>
-                    )}
-                  </div>
-                </ResizablePanel>
+  return (
+    <>
+      <div id="playground">
+        <div className="title1 font-bold text-3xl what2">
+          Game Story Generator
+        </div>
+        <br />
+        
+        <div className="bg-white shadow-lg rounded ashraf">
+          <div className="flex flex-col h-full">
+            <ResizablePanelGroup direction="horizontal" className="flex flex-grow">
+              <ResizablePanel className="border-r flex-grow">
+                <div className="flex flex-col h-full items-center justify-center p-6">
+                  <span className="font-semibold text-xl">Seed for Adventure</span>
+                  <Textarea
+                    spellcheck="false"
+                    className="mt-4 resize-none w-full flex-grow font-semibold bg-gray-100 text-base"
+                    placeholder="Enter your story seed here"
+                    value={storySeed}
+                    onChange={(e) => setStorySeed(e.target.value)}
+                  />
+                  <br />
+                  <Button onClick={generateGameStory}>Generate Story</Button>
+                  {error && (
+                    <Alert variant="destructive" className="mt-2">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertTitle>Error</AlertTitle>
+                      <AlertDescription>{error}</AlertDescription>
+                    </Alert>
+                  )}
+                </div>
+              </ResizablePanel>
 
                 <ResizableHandle />
 
